@@ -1,0 +1,901 @@
+@import "./font/fonts.css";
+/*root styling*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Lato,'sans-serif';
+}
+body,html{
+    scroll-behavior: smooth;
+}
+:root{
+    --header-bg:crimson;
+}
+
+/*global styling*/
+a{
+    text-decoration: none;
+    color: initial;
+}
+ul{
+    list-style: none;
+}
+.container{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.col-2{
+    flex-basis: 50%;
+}
+.col-3{
+   flex-basis: calc(33% - 20px);
+}
+.col-4{
+    flex-basis: 25%;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+/*section styling*/
+
+/*Scroll up section*/
+.scroll-up{
+    width: 40px;
+    height: 38px;
+    background: crimson;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    line-height: 38px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+.scroll-up.show{
+    bottom: 30px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+/*Scroll up section end*/
+
+
+/*Header section*/
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all .5s ease;
+}
+#header.sticky{
+    background: var(--header-bg);
+}
+.navbar{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+#header.sticky .navbar{
+    padding: 10px 0;
+}
+.navbar .logo a{
+    font-size: 32px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.navbar .logo a span{
+    color: crimson;
+    transition: all .5s ease;
+}
+#header.sticky .logo a span{
+    color: #fff;
+}
+.navbar ul.menu li{
+    display: inline-block;
+}
+.navbar ul.menu li a{
+    color: #fff;
+    font-size: 16.3px;
+    font-weight: 500;
+    margin-left: 27px;
+    display: block;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all .3s ease;
+}
+.navbar ul.menu li a:hover{
+    color: crimson;
+}
+#header.sticky ul.menu li a:hover{
+    color: #efefef;
+}
+.navbar .menu-bar{
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+/*Header section end */
+
+/*Home section */
+#home{
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../assets/images/saikot-me.jpg") no-repeat center top;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    min-height: 500px;
+    color: #fff;
+}
+#home .container{
+    margin: auto 0 auto 40px;
+}
+#home .container .home-content .text1{
+    font-size: 19px;
+}
+#home .container .home-content .text2{
+    font-size: 65px;
+    font-weight: 600;
+    margin-left: -2px;
+    letter-spacing: .3px;
+    margin-top: -5px;
+}
+#home .container .home-content .text3{
+    font-size: 28px;
+    letter-spacing: .5px;
+    margin-top: 3px;
+}
+#home .container .home-content a.btn{
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    border: 3px solid crimson;
+    background: crimson;
+    padding: 8px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: all .3s ease;
+}
+#home .container .home-content a.btn:hover{
+    background: transparent;
+}
+#home .container .home-content .text3 span{
+    color: crimson;
+    font-weight: 500;
+}
+/*Home section end */
+
+/*About section */
+.about{
+    padding-top: 4em;
+    margin-bottom: 50px;
+}
+.about h2.title{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans",'sans-serif';
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.about h2.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 3px;
+    display: inline-block;
+    background: #222;
+    transform: translateX(-50%);
+}
+.about h2.title::after{
+    content: 'Who i am';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 14px;
+    padding: 5px;
+    background: #fff;
+    color: crimson;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold",sans-serif;
+    transform: translateX(-50%);
+}
+.about .row .col-2 img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.about .row .about-content .text{
+    font-size: 29px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.about .row .about-content .text span{
+    color: crimson;
+}
+.about .row .about-content p.para{
+    font-size: 17px;
+    line-height: 23px;
+    color: #333;
+    font-weight: 400;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.about .row .about-content a.btn2{
+    background: crimson;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 7px 15px;
+    border: 3px solid crimson;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+.about .row .about-content a.btn2:hover{
+    background: transparent;
+    color: crimson;
+}
+/*About section end */
+
+/*Service section */
+.services{
+    padding: 80px 0;
+    margin-bottom: 50px;
+    background: #111;
+    color: #fff;
+}
+.services h2.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans",'sans-serif';
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.services h2.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    display: inline-block;
+    background: #fff;
+    transform: translateX(-50%);
+}
+.services h2.title::after{
+    content: 'What i provide';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 14px;
+    padding: 5px;
+    background: #111;
+    color: crimson;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold",sans-serif;
+    transform: translateX(-50%);
+}
+.services .col-3{
+    text-align: center;
+    margin: 0 auto 30px;
+}
+.services .card .box .fa-paint-brush,.fa-cog,.fa-wordpress{
+    font-size: 38px;
+    color: crimson;
+    margin-bottom: 20px;
+}
+.services .card{
+    background: #222;
+    padding: 20px 25px;
+    /*margin-right: 20px;*/
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    transition: all .3s ease;
+}
+.services .card:hover {
+    background: crimson;
+    transform: translateY(-5px);
+}
+.services .card:hover .fa-paint-brush{
+    color: #fff;
+}
+.services .card:hover .fa-cog{
+     color: #fff;
+ }
+.services .card:hover .fa-wordpress{
+    color: #fff;
+}
+.services .card .text{
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.services .card p{
+    font-size: 16.5px;
+    color: #ffffff;
+    padding-bottom: 10px;
+    line-height: 23px;
+}
+/*Service section end */
+
+/*Skills section*/
+.skills{
+    padding-top: 70px;
+}
+.skills h2.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans",'sans-serif';
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.skills h2.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 140px;
+    height: 3px;
+    display: inline-block;
+    background: #222;
+    transform: translateX(-50%);
+}
+.skills h2.title::after{
+    content: 'What i know';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 14px;
+    padding: 5px;
+    background: #fff;
+    color: crimson;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold",sans-serif;
+    transform: translateX(-50%);
+}
+.skills .skills-content{
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 0 70px 0 0;
+}
+.skills .skills-content h2{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.skills .skills-content p{
+    font-size: 18px;
+    line-height: 26px;
+    text-align: justify;
+}
+.skills .bars{
+    margin-bottom: 15px;
+}
+.skills .bars .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.skills .bars .info span{
+    font-size: 19px;
+    font-weight: 600;
+}
+.skills .bars .line{
+    width: 100%;
+    height: 4px;
+    background: lightgray;
+    position: relative;
+}
+.skills .bars .line::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: crimson;
+}
+.skills .bars .html::before{
+    width: 80%;
+}
+.skills .bars .css::before{
+    width: 70%;
+}
+.skills .bars .bootstrap::before{
+    width: 80%;
+}
+.skills .bars .javascript::before{
+    width: 40%;
+}
+.skills .bars .php::before{
+    width: 50%;
+}
+.skills .bars .mysql::before{
+    width: 55%;
+}
+.skills .bars .wordpress::before{
+    width: 65%;
+}
+/*Skills section end */
+
+/*Team section */
+.teams{
+    padding-top: 70px;
+    background: #111;
+    color: #fff;
+    margin-top: 100px;
+}
+.teams h2.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans",'sans-serif';
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.teams h2.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 3px;
+    display: inline-block;
+    background: #fff;
+    transform: translateX(-50%);
+}
+.teams h2.title::after{
+    content: 'Who with me';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 14px;
+    padding: 5px;
+    background: #111;
+    color: crimson;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold",sans-serif;
+    transform: translateX(-50%);
+}
+.teams .row .col-4{
+    background: #222;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    margin-bottom: 20px;
+}
+.teams .card{
+    cursor: pointer;
+    padding: 25px 35px;
+    transition: all .3s ease;
+}
+.teams .card:hover{
+    background: crimson;
+    color: #fff;
+}
+.teams .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .card:hover .box img{
+    border-color: #fff;
+}
+.teams .card .box{
+    text-align: center;
+    transition: all .3s ease;
+}
+.teams .card .box div.name{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 7px 0;
+}
+.teams .card .box p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.teams .card .box img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid crimson;
+    transition: all .3s ease;
+}
+/*Team section end */
+
+/*Contact section */
+.contact{
+    padding-top: 60px;
+    margin-bottom: 50px;
+}
+.contact h2.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans",'sans-serif';
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.contact h2.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 160px;
+    height: 3px;
+    display: inline-block;
+    background: #222;
+    transform: translateX(-50%);
+}
+.contact h2.title::after{
+    content: 'Get in touch';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 14px;
+    padding: 5px;
+    background: #fff;
+    color: crimson;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold",sans-serif;
+    transform: translateX(-50%);
+}
+.contact div.text{
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contact .box{
+    display: flex;
+    align-items: center;
+    height: 65px;
+}
+.contact .box .user-info{
+    margin-left: 22px;
+}
+.contact .box .fa-user, .fa-map-marker-alt, .fa-envelope,.fa-globe{
+    font-size: 22px;
+    color: crimson;
+}
+.contact .box .user-info .title{
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.contact .box .user-info .sub-title{
+    color: #333333;
+    font-size: 18px;
+}
+.contact .box .user-info address{
+    font-style: normal;
+}
+.contact form{
+    margin-top: 30px;
+}
+.contact .input-wrap .input-box{
+    margin-bottom: 10px;
+}
+.contact .input-wrap .input-box:not(:last-child){
+    width: 100%;
+    height: 35px;
+}
+.contact .input-wrap .input-box input:not(textarea){
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 12px;
+    border: 2px solid lightgray;
+}
+.contact .input-wrap .input-box input:focus::placeholder{
+    transform: scaleX(0);
+}
+.contact .input-wrap .input-box input:focus{
+    border-color: crimson;
+}
+.contact .input-wrap .input-box textarea {
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 12px;
+    resize: none;
+    border: 2px solid lightgray;
+}
+.contact .input-wrap .input-box textarea:focus::placeholder{
+    transform: scaleX(0);
+}
+.contact .input-wrap .input-box textarea:focus{
+    border-color: crimson;
+}
+.contact .submit-btn{
+    width: 150px;
+    height: 45px;
+}
+.contact .submit-btn button.btn3{
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    background: crimson;
+    font-size: 18px;
+    font-weight: 500;
+    /*padding: 6px 12px;*/
+    border: 2px solid crimson;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+.contact .submit-btn button.btn3:hover{
+    background: transparent;
+    color: crimson;
+}
+/*Contact section end */
+
+/*Footer section*/
+footer.footer{
+    background: #111;
+    padding: 22px 25px;
+    color: #fff;
+}
+footer.footer p{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+footer.footer a{
+    color: crimson;
+}
+/*Footer section end */
+
+
+/*Responsive section*/
+@media (max-width: 1300px) {
+    #home .container{
+        margin: auto 0 auto 0;
+    }
+}
+
+@media (max-width: 1140px) {
+    .services .col-3{
+        flex-basis: calc(49% - 20px);
+    }
+    .skills .skills-content h2{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    .contact .row .col-2{
+        flex-basis: 100%;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 1040px) {
+    .teams .row .col-4{
+        flex-basis: 50%;
+    }
+    .skills .skills-content{
+        padding: 0 50px 0 0;
+    }
+}
+@media (max-width: 992px) {
+    .about .row .col-2 img{
+        width: 350px;
+        height: 350px;
+        margin-bottom: 0;
+    }
+    .skills .skills-content{
+        padding: 0 50px 0 0;
+    }
+}
+@media (max-width: 950px) {
+    .navbar .menu-bar{
+        display: block;
+        z-index: 999;
+    }
+    .container{
+        padding: 0 50px;
+    }
+    .navbar ul.menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        background: #000;
+        padding-top: 80px;
+        text-align: center;
+        transition: all .5s ease;
+    }
+    .navbar ul.menu.active{
+        left: 0;
+    }
+    .navbar ul.menu li{
+        display: block;
+    }
+    .navbar ul.menu li a{
+        display: inline-block;
+        margin: 15px 0;
+        font-size: 22px;
+    }
+    .navbar .menu-bar.active i::before{
+        content: "\f00d";
+    }
+    #home .container .home-content .text1{
+        font-size: 17px;
+    }
+    #home .container .home-content .text2{
+        font-size: 55px;
+    }
+    #home .container .home-content .text3{
+        font-size: 24px;
+    }
+    #home .container .home-content a.btn{
+        padding: 8px 30px;
+        font-size: 21px;
+    }
+    .skills .skills-content{
+        padding: 0 40px 0 0;
+    }
+}
+@media (max-width: 870px) {
+    .about .col-2{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .about .row .col-2 img{
+        width: 400px;
+        height: 400px;
+        margin-bottom: 30px;
+    }
+    .skills .row .col-2{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .skills .skills-content{
+        padding: 0 0 0 0;
+    }
+}
+@media (max-width: 670px) {
+    .services .col-3{
+        flex-basis: 100%;
+    }
+
+}
+@media (max-width: 600px) {
+    .container{
+        padding: 0 25px;
+    }
+    #home .container .home-content .text2{
+        font-size: 42px;
+    }
+    #home .container .home-content .text3{
+        font-size: 20px;
+    }
+    #home .container .home-content a.btn{
+        padding: 6px 26px;
+        font-size: 20px;
+    }
+    .about .container{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .about{
+        margin-bottom: 100px;
+    }
+   .about .col-2{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .about .row .col-2 img{
+        width: 100%;
+        height: 100%;
+    }
+    .about .row .about-content .text{
+        font-size: 26px;
+    }
+    .about .row .about-content a.btn2{
+        font-size: 18px;
+        padding: 5px 13px;
+    }
+    .skills .row .col-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .skills .container{
+        padding: 0 30px;
+    }
+    .teams .row .col-4{
+        flex-basis: 100%;
+    }
+    .contact .submit-btn {
+        width: 120px;
+        height: 38px;
+    }
+    .contact .submit-btn button.btn3{
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 370px) {
+    .container{
+        padding: 0 25px;
+    }
+    #home .container .home-content .text1{
+        font-size: 15px;
+    }
+    #home .container .home-content .text2{
+        margin-top: 0;
+        font-size: 30px;
+    }
+    #home .container .home-content .text3{
+        font-size: 18px;
+    }
+    #home .container .home-content a.btn{
+        padding: 4px 20px;
+        font-size: 18px;
+    }
+    .about .col-2{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .about .row .col-2 img{
+        width: 100%;
+        height: 300px;
+    }
+    .about .container{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .about .row .about-content .text{
+        font-size: 23px;
+    }
+    .about .row .about-content p.para{
+        font-size: 16px;
+    }
+    .about .row .about-content a.btn2{
+        font-size: 17px;
+        padding: 5px 12px;
+    }
+    .services .col-3{
+        flex-basis: 100%;
+    }
+}
